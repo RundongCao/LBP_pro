@@ -1,16 +1,17 @@
+%This project works for searching similar images from a large scale dataset based on LBP feature
 clear all;
 close all;
 clc;
 
-Path0 = 'E:\±ÏÒµÉè¼Æ\UIUCÎÆÀíÊı¾İ¿â\dataset\';
+Path0 = 'E:\æ¯•ä¸šè®¾è®¡\UIUCçº¹ç†æ•°æ®åº“\dataset\';
 Path_list0=dir(Path0);
-loop1=22;%µÚÒ»¸öÊÇ´Ó3¿ªÊ¼,Ò»Ö±µ½27
-file_path=['E:\±ÏÒµÉè¼Æ\UIUCÎÆÀíÊı¾İ¿â\dataset\' Path_list0(loop1).name];
+loop1=22;%ç¬¬ä¸€ä¸ªæ˜¯ä»3å¼€å§‹,ä¸€ç›´åˆ°27
+file_path=['E:\æ¯•ä¸šè®¾è®¡\UIUCçº¹ç†æ•°æ®åº“\dataset\' Path_list0(loop1).name];
 img_path_list=dir(file_path);
 img_num=length(img_path_list)-2;
 
 
-input1=imread([file_path '\' img_path_list(5).name]);%3µ½42
+input1=imread([file_path '\' img_path_list(5).name]);%3åˆ°42
 
 LBPtest = get_feature3(input1);
 LBPtest = LBPtest(:)';
@@ -18,7 +19,7 @@ LBPtest = LBPtest(:)';
 dist = zeros(1,1000);
 flag = 0;
 for loop1=3:27
-    file_path=['E:\±ÏÒµÉè¼Æ\UIUCÎÆÀíÊı¾İ¿â\dataset\' Path_list0(loop1).name];
+    file_path=['E:\æ¯•ä¸šè®¾è®¡\UIUCçº¹ç†æ•°æ®åº“\dataset\' Path_list0(loop1).name];
     img_path_list=dir(file_path);
     for loop2 = 3:42
         flag = flag+1;
